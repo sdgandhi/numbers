@@ -1,5 +1,5 @@
 //
-//  RecognizedSpeech.swift
+//  SpeechRecognizer.swift
 //  numbers
 //
 //  Created by Sidhant Gandhi on 5/12/20.
@@ -9,7 +9,7 @@
 import Foundation
 import Combine
 
-final class RecognizedSpeech: ObservableObject  {
+final class SpeechRecognizer: ObservableObject  {
     var speechManager: SpeechManager
     
     @Published var text: String?
@@ -18,8 +18,8 @@ final class RecognizedSpeech: ObservableObject  {
         self.speechManager = SpeechManager()
         speechManager.update = { recognized in
             print("recognized: \(recognized)")
-            let spelledOut = SpellOut(string: recognized)
-            self.text = spelledOut
+            let numberWords = NumberWords(string: recognized)
+            self.text = numberWords
         }
     }
     
@@ -29,5 +29,9 @@ final class RecognizedSpeech: ObservableObject  {
     
     func deactivate() throws {
         try speechManager.deactivate()
+    }
+    
+    func reset() throws {
+        try speechManager.reset()
     }
 }

@@ -12,7 +12,7 @@ import Speech
 
 class SpeechManager {
     private let audioEngine = AVAudioEngine()
-    private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest? = SFSpeechAudioBufferRecognitionRequest()
+    private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     private var recognitionTask: SFSpeechRecognitionTask?
     private let speechRecognizer = SFSpeechRecognizer()
     private var inputNode: AVAudioInputNode?
@@ -20,58 +20,66 @@ class SpeechManager {
     
     var update: ((String) -> Void)?
     
-    func deactivate() throws {
-        self.audioEngine.stop()
+    func reset() throws {
+        print("Speech manager resetting")
+        update?("")
+        recognitionTask?.cancel()
         inputNode?.removeTap(onBus: 0)
-        try audioSession.setActive(false)
-        self.recognitionRequest = nil
-        self.recognitionTask = nil
-    }
-    
-    func activate() throws {
-        guard let recognitionRequest = recognitionRequest else {
-            throw SpeechManagerError.SpeechRecognitionRequestUnavailable
-        }
-        
-        // Configure recognition request
-        recognitionRequest.shouldReportPartialResults = true
-        
-        // Configure the audio session for the app.
-        try audioSession.setCategory(.record, mode: .measurement, options: .duckOthers)
-        try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
-        inputNode = audioEngine.inputNode
         
         // Configure the microphone input.
         guard let inputNode = inputNode else {
             throw SpeechManagerError.AudioInputNodeUnavailable
         }
         let recordingFormat = inputNode.outputFormat(forBus: 0)
-        inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { (buffer: AVAudioPCMBuffer, when: AVAudioTime) in
-            recognitionRequest.append(buffer)
+        
+        // Configure the recognition request
+        recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
+        guard let request = recognitionRequest else {
+            throw SpeechManagerError.SpeechRecognitionRequestUnavailable
         }
-
-        audioEngine.prepare()
-        try audioEngine.start()
+        request.shouldReportPartialResults = true
+        
+        inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { (buffer: AVAudioPCMBuffer, when: AVAudioTime) in
+            request.append(buffer)
+        }
         
         // Create a recognition task for the speech recognition session.
         // Keep a reference to the task so that it can be canceled.
-        guard let speechRecognizer = speechRecognizer else {
+        guard let recognizer = speechRecognizer else {
             throw SpeechManagerError.SpeechRecognizerUnavailable
         }
         
-        recognitionTask = speechRecognizer.recognitionTask(with: recognitionRequest) { result, error in
-            var isFinal = false
-            
+        recognitionTask = recognizer.recognitionTask(with: request) { result, error in
+            if let error = error {
+                print("Speech Manager error: \(error.localizedDescription)")
+            }
             if let result = result {
                 self.update?(result.bestTranscription.formattedString)
-                isFinal = result.isFinal
-            }
-            
-            if error != nil || isFinal {
-                // Stop recognizing speech if there is a problem.
-                try? self.deactivate()
             }
         }
+    }
+    
+    func deactivate() throws {
+        print("Speech manager deactivating")
+        self.audioEngine.stop()
+        inputNode?.removeTap(onBus: 0)
+        try audioSession.setActive(false)
+        recognitionTask?.cancel()
+        recognitionRequest = nil
+        recognitionTask = nil
+    }
+    
+    func activate() throws {
+        print("Speech manager activating")
+        // Configure the audio session for the app.
+        try audioSession.setCategory(.record, mode: .measurement, options: .duckOthers)
+        try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
+        inputNode = audioEngine.inputNode
+        
+        try reset()
+
+        audioEngine.prepare()
+        try audioEngine.start()
     }
 }
 

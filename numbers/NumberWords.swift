@@ -1,5 +1,5 @@
 //
-//  SpellOut.swift
+//  NumberWords.swift
 //  numbers
 //
 //  Created by Sidhant Gandhi on 5/12/20.
@@ -10,7 +10,7 @@ import Foundation
 
 var numberFormatter = NumberFormatter()
 
-func SpellOut(string: String) -> String {
+func NumberWords(string: String) -> String {
     guard let number = Int(string) else {
         return string
     }

@@ -1,5 +1,5 @@
 //
-//  spellOutTests.swift
+//  numberWordsTests.swift
 //  numbersTests
 //
 //  Created by Sidhant Gandhi on 5/12/20.
@@ -41,35 +41,35 @@ let testNumbersTenThousands = [
     (20024, "twenty thousand twenty four")
 ]
 
-class spellOutTests: XCTestCase {
+class numberWordsTests: XCTestCase {
     func testOnes() throws {
         testNumbersOnes.forEach { (candidate) in
-            XCTAssertEqual(SpellOut(string: String(candidate.0)), candidate.1)
+            XCTAssertEqual(NumberWords(string: String(candidate.0)), candidate.1)
         }
     }
     
     func testTens() throws {
         testNumbersTens.forEach { (candidate) in
-            XCTAssertEqual(SpellOut(string: String(candidate.0)), candidate.1)
+            XCTAssertEqual(NumberWords(string: String(candidate.0)), candidate.1)
         }
     }
     
     func testThousands() throws {
         testNumbersThousands.forEach { (candidate) in
-            XCTAssertEqual(SpellOut(string: String(candidate.0)), candidate.1)
+            XCTAssertEqual(NumberWords(string: String(candidate.0)), candidate.1)
         }
     }
     
     func testTenThousands() throws {
         testNumbersTenThousands.forEach { (candidate) in
-            XCTAssertEqual(SpellOut(string: String(candidate.0)), candidate.1)
+            XCTAssertEqual(NumberWords(string: String(candidate.0)), candidate.1)
         }
     }
 
     func testPerformanceOfThousands() throws {
         // This is an example of a performance test case.
         self.measure {
-            var _ = SpellOut(string: "3866")
+            var _ = NumberWords(string: "3866")
         }
     }
 }

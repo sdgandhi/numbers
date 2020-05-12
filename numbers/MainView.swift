@@ -10,8 +10,10 @@ import SwiftUI
 import Speech
 
 struct MainView: View {
-    @ObservedObject var recognizedSpeech = RecognizedSpeech()
-
+    @ObservedObject var speechRecognizer = SpeechRecognizer()
+    @ObservedObject var numberGenerator = NumberGenerator()
+    @State var isStarted = true
+    
     var body: some View {
         VStack {
             Text("Numbers")
@@ -21,10 +23,7 @@ struct MainView: View {
                 .lineLimit(1)
                 .padding(.bottom, 64.0)
             HStack {
-                Text("3")
-                Text("8")
-                Text("2")
-                Text("4")
+                Text(String(numberGenerator.number?.number ?? 0))
             }
             .font(.largeTitle)
             Spacer()
@@ -35,9 +34,21 @@ struct MainView: View {
             Text("Say the number...")
                 .padding(.bottom)
                 .foregroundColor(Color(UIColor.systemGray))
-            Text(recognizedSpeech.text ?? " ")
+            VStack<Text> {
+                if (speechRecognizer.text == numberGenerator.number?.numberWords) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                        try? self.speechRecognizer.reset()
+                        self.numberGenerator.generate()
+                    }
+                }
+                return Text(speechRecognizer.text ?? " ")
                 .font(.title)
                 .fontWeight(.black)
+                .foregroundColor(Color(speechRecognizer.text == numberGenerator.number?.numberWords ? UIColor.systemGreen : UIColor.systemYellow))
+            }
+            Button(self.isStarted ? "Stop" : "Start") {
+                self.isStarted ? try? self.speechRecognizer.deactivate() : try? self.speechRecognizer.activate()
+            }
             Spacer()
         }
         .padding(.vertical)
@@ -51,7 +62,7 @@ struct MainView: View {
                     case .authorized:
                         print("authorized for speech recognition")
                         do {
-                            try self.recognizedSpeech.activate()
+                            try self.speechRecognizer.activate()
                         } catch {
                             print("ERROR \(error.localizedDescription)")
                         }

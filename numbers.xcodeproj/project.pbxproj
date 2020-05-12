@@ -17,13 +17,16 @@
 		DC93136E246A8BB800E1E827 /* SpeechManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC93136D246A8BB800E1E827 /* SpeechManager.swift */; };
 		DC93136F246A8BB800E1E827 /* SpeechManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC93136D246A8BB800E1E827 /* SpeechManager.swift */; };
 		DC931370246A8BB800E1E827 /* SpeechManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC93136D246A8BB800E1E827 /* SpeechManager.swift */; };
-		DC931372246A93B300E1E827 /* RecognizedSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC931371246A93B300E1E827 /* RecognizedSpeech.swift */; };
-		DC931373246A93B300E1E827 /* RecognizedSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC931371246A93B300E1E827 /* RecognizedSpeech.swift */; };
-		DC931374246A93B300E1E827 /* RecognizedSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC931371246A93B300E1E827 /* RecognizedSpeech.swift */; };
-		DCC7F0F9246AA827002C8A98 /* SpellOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7F0F8246AA827002C8A98 /* SpellOut.swift */; };
-		DCC7F0FA246AA827002C8A98 /* SpellOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7F0F8246AA827002C8A98 /* SpellOut.swift */; };
-		DCC7F0FB246AA827002C8A98 /* SpellOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7F0F8246AA827002C8A98 /* SpellOut.swift */; };
+		DC931372246A93B300E1E827 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC931371246A93B300E1E827 /* SpeechRecognizer.swift */; };
+		DC931373246A93B300E1E827 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC931371246A93B300E1E827 /* SpeechRecognizer.swift */; };
+		DC931374246A93B300E1E827 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC931371246A93B300E1E827 /* SpeechRecognizer.swift */; };
+		DCC7F0F9246AA827002C8A98 /* NumberWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7F0F8246AA827002C8A98 /* NumberWords.swift */; };
+		DCC7F0FA246AA827002C8A98 /* NumberWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7F0F8246AA827002C8A98 /* NumberWords.swift */; };
+		DCC7F0FB246AA827002C8A98 /* NumberWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7F0F8246AA827002C8A98 /* NumberWords.swift */; };
 		DCC7F0FD246AA942002C8A98 /* spellOutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7F0FC246AA942002C8A98 /* spellOutTests.swift */; };
+		DCDA81D0246AAF570092A726 /* NumberGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDA81CF246AAF570092A726 /* NumberGenerator.swift */; };
+		DCDA81D1246AAF570092A726 /* NumberGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDA81CF246AAF570092A726 /* NumberGenerator.swift */; };
+		DCDA81D2246AAF570092A726 /* NumberGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDA81CF246AAF570092A726 /* NumberGenerator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,10 +62,11 @@
 		DC931360246A7F9000E1E827 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC93136C246A81C900E1E827 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DC93136D246A8BB800E1E827 /* SpeechManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechManager.swift; sourceTree = "<group>"; };
-		DC931371246A93B300E1E827 /* RecognizedSpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognizedSpeech.swift; sourceTree = "<group>"; };
-		DCC7F0F8246AA827002C8A98 /* SpellOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellOut.swift; sourceTree = "<group>"; };
+		DC931371246A93B300E1E827 /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
+		DCC7F0F8246AA827002C8A98 /* NumberWords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberWords.swift; sourceTree = "<group>"; };
 		DCC7F0FC246AA942002C8A98 /* spellOutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = spellOutTests.swift; sourceTree = "<group>"; };
 		DCDA81CE246AAD030092A726 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		DCDA81CF246AAF570092A726 /* NumberGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberGenerator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,8 +123,9 @@
 				DC93133E246A7F8900E1E827 /* SceneDelegate.swift */,
 				DC931340246A7F8900E1E827 /* MainView.swift */,
 				DC93136D246A8BB800E1E827 /* SpeechManager.swift */,
-				DC931371246A93B300E1E827 /* RecognizedSpeech.swift */,
-				DCC7F0F8246AA827002C8A98 /* SpellOut.swift */,
+				DC931371246A93B300E1E827 /* SpeechRecognizer.swift */,
+				DCC7F0F8246AA827002C8A98 /* NumberWords.swift */,
+				DCDA81CF246AAF570092A726 /* NumberGenerator.swift */,
 				DC931342246A7F9000E1E827 /* Assets.xcassets */,
 				DC931347246A7F9000E1E827 /* LaunchScreen.storyboard */,
 				DC93134A246A7F9000E1E827 /* Info.plist */,
@@ -288,10 +293,11 @@
 			files = (
 				DC93133D246A7F8900E1E827 /* AppDelegate.swift in Sources */,
 				DC93136E246A8BB800E1E827 /* SpeechManager.swift in Sources */,
-				DC931372246A93B300E1E827 /* RecognizedSpeech.swift in Sources */,
+				DC931372246A93B300E1E827 /* SpeechRecognizer.swift in Sources */,
 				DC93133F246A7F8900E1E827 /* SceneDelegate.swift in Sources */,
 				DC931341246A7F8900E1E827 /* MainView.swift in Sources */,
-				DCC7F0F9246AA827002C8A98 /* SpellOut.swift in Sources */,
+				DCDA81D0246AAF570092A726 /* NumberGenerator.swift in Sources */,
+				DCC7F0F9246AA827002C8A98 /* NumberWords.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,9 +306,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCC7F0FD246AA942002C8A98 /* spellOutTests.swift in Sources */,
-				DCC7F0FA246AA827002C8A98 /* SpellOut.swift in Sources */,
+				DCC7F0FA246AA827002C8A98 /* NumberWords.swift in Sources */,
+				DCDA81D1246AAF570092A726 /* NumberGenerator.swift in Sources */,
 				DC93136F246A8BB800E1E827 /* SpeechManager.swift in Sources */,
-				DC931373246A93B300E1E827 /* RecognizedSpeech.swift in Sources */,
+				DC931373246A93B300E1E827 /* SpeechRecognizer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,9 +318,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC93135F246A7F9000E1E827 /* numbersUITests.swift in Sources */,
-				DCC7F0FB246AA827002C8A98 /* SpellOut.swift in Sources */,
+				DCC7F0FB246AA827002C8A98 /* NumberWords.swift in Sources */,
+				DCDA81D2246AAF570092A726 /* NumberGenerator.swift in Sources */,
 				DC931370246A8BB800E1E827 /* SpeechManager.swift in Sources */,
-				DC931374246A93B300E1E827 /* RecognizedSpeech.swift in Sources */,
+				DC931374246A93B300E1E827 /* SpeechRecognizer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
