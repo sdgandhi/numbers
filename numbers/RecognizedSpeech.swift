@@ -17,7 +17,9 @@ final class RecognizedSpeech: ObservableObject  {
     init() {
         self.speechManager = SpeechManager()
         speechManager.update = { recognized in
-            self.text = recognized
+            print("recognized: \(recognized)")
+            let spelledOut = SpellOut(string: recognized)
+            self.text = spelledOut
         }
     }
     
