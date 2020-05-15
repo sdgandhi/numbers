@@ -37,6 +37,8 @@
 		DCE0A2F4246E762B005BCAA6 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE0A2F2246E762B005BCAA6 /* MainView.swift */; };
 		DCE0A2F6246E8360005BCAA6 /* ShakeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE0A2F5246E8360005BCAA6 /* ShakeAnimation.swift */; };
 		DCE0A2F7246E8360005BCAA6 /* ShakeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE0A2F5246E8360005BCAA6 /* ShakeAnimation.swift */; };
+		DCE0A2F9246F4A31005BCAA6 /* BubbleAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE0A2F8246F4A31005BCAA6 /* BubbleAnimation.swift */; };
+		DCE0A2FA246F4A31005BCAA6 /* BubbleAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE0A2F8246F4A31005BCAA6 /* BubbleAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +84,7 @@
 		DCE0A2EF246E75FF005BCAA6 /* ChoicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoicesView.swift; sourceTree = "<group>"; };
 		DCE0A2F2246E762B005BCAA6 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		DCE0A2F5246E8360005BCAA6 /* ShakeAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeAnimation.swift; sourceTree = "<group>"; };
+		DCE0A2F8246F4A31005BCAA6 /* BubbleAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleAnimation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,11 +147,12 @@
 				DCC7F0F8246AA827002C8A98 /* NumberWords.swift */,
 				DCDA81CF246AAF570092A726 /* NumberGenerator.swift */,
 				DCE0A2E8246E697C005BCAA6 /* AnswerGenerator.swift */,
+				DCE0A2F5246E8360005BCAA6 /* ShakeAnimation.swift */,
+				DCE0A2F8246F4A31005BCAA6 /* BubbleAnimation.swift */,
 				DC931342246A7F9000E1E827 /* Assets.xcassets */,
 				DC931347246A7F9000E1E827 /* LaunchScreen.storyboard */,
 				DC93134A246A7F9000E1E827 /* Info.plist */,
 				DC931344246A7F9000E1E827 /* Preview Content */,
-				DCE0A2F5246E8360005BCAA6 /* ShakeAnimation.swift */,
 			);
 			path = numbers;
 			sourceTree = "<group>";
@@ -315,6 +319,7 @@
 				DC93133D246A7F8900E1E827 /* AppDelegate.swift in Sources */,
 				DCE0A2F0246E75FF005BCAA6 /* ChoicesView.swift in Sources */,
 				DC93136E246A8BB800E1E827 /* SpeechManager.swift in Sources */,
+				DCE0A2F9246F4A31005BCAA6 /* BubbleAnimation.swift in Sources */,
 				DCE0A2F3246E762B005BCAA6 /* MainView.swift in Sources */,
 				DC931372246A93B300E1E827 /* SpeechRecognizer.swift in Sources */,
 				DC93133F246A7F8900E1E827 /* SceneDelegate.swift in Sources */,
@@ -349,6 +354,7 @@
 				DCDA81D2246AAF570092A726 /* NumberGenerator.swift in Sources */,
 				DC931370246A8BB800E1E827 /* SpeechManager.swift in Sources */,
 				DCE0A2F7246E8360005BCAA6 /* ShakeAnimation.swift in Sources */,
+				DCE0A2FA246F4A31005BCAA6 /* BubbleAnimation.swift in Sources */,
 				DC931374246A93B300E1E827 /* SpeechRecognizer.swift in Sources */,
 				DCE0A2EB246E697C005BCAA6 /* AnswerGenerator.swift in Sources */,
 				DCE0A2F1246E75FF005BCAA6 /* ChoicesView.swift in Sources */,

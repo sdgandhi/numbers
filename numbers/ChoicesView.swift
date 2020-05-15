@@ -20,9 +20,11 @@ struct ChoicesView: View {
     @ObservedObject var numberGenerator = NumberGenerator()
     @State var answerStatus: AnswerStatus = .unknown
     @State var wrongAttempts: Int = 0 // used only for animation interpolation
+    @State var rightAttempts: CGFloat = 0 // used only for animation interpolation
     
     var body: some View {
         let number = numberGenerator.number!.number
+        let numberString = String(number)
         let answers = answerGenerator.generate(number: number)
         
         return VStack {
@@ -32,10 +34,17 @@ struct ChoicesView: View {
                 .multilineTextAlignment(.center)
                 .lineLimit(1)
                 .padding(.bottom, 64.0)
-            Text(String(number))
-                .frame(maxWidth: .infinity)
-                .modifier(Shake(amount: 25, shakesPerUnit: 3, animatableData: CGFloat(self.wrongAttempts)))
-                .font(.system(size: 72, weight: .bold, design: Font.Design.monospaced))
+            HStack(spacing: 0) {
+                ForEach(0..<numberString.count) { index in
+                    Text(String(numberString[numberString.index(numberString.startIndex, offsetBy: index)]))
+                    .frame(maxWidth: .infinity)
+                        .modifier(BubbleAnimation(amount: 0.2, animatableData: CGFloat(self.rightAttempts)))
+                        .animation(Animation.spring().delay(Double(index)/10.0))
+                }
+            }
+            .modifier(ShakeAnimation(amount: 25, shakesPerUnit: 3, animatableData: CGFloat(self.wrongAttempts)))
+            .font(.system(size: 72, weight: .bold, design: Font.Design.monospaced))
+            .padding(.horizontal)
             Spacer()
             Text("What's the number?")
                 .padding(.bottom)
@@ -44,6 +53,7 @@ struct ChoicesView: View {
                     Button(action: {
                         if (ans == NumberWords(string: String(number))) {
                             self.answerStatus = .correct
+                            self.rightAttempts += 1
                             DispatchQueue.main.asyncAfter(deadline: .now() + self.confirmationDuration) {
                                 self.answerStatus = .unknown
                                 self.numberGenerator.generate()
