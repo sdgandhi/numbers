@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import numbers
+@testable import Numbers
 
 let testNumbersOnes = [
     (1, "one"),
