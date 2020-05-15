@@ -49,11 +49,15 @@ class SpeechManager {
             throw SpeechManagerError.SpeechRecognizerUnavailable
         }
         
+        recognizer.defaultTaskHint = .dictation
+        
         recognitionTask = recognizer.recognitionTask(with: request) { result, error in
             if let error = error {
                 print("Speech Manager error: \(error.localizedDescription)")
             }
             if let result = result {
+                print("-----")
+                print(result.transcriptions)
                 self.update?(result.bestTranscription.formattedString)
             }
         }
