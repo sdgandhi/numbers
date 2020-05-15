@@ -15,10 +15,12 @@ enum AnswerStatus {
 }
 
 struct ChoicesView: View {
+    var confirmationDuration = 1.5
     var answerGenerator = AnswerGenerator()
     @ObservedObject var numberGenerator = NumberGenerator()
     @State var answerStatus: AnswerStatus = .unknown
-
+    @State var wrongAttempts: Int = 0 // used only for animation interpolation
+    
     var body: some View {
         let number = numberGenerator.number!.number
         let answers = answerGenerator.generate(number: number)
@@ -30,26 +32,26 @@ struct ChoicesView: View {
                 .multilineTextAlignment(.center)
                 .lineLimit(1)
                 .padding(.bottom, 64.0)
-            HStack {
-                Text(String(number))
-            }
-            .font(.largeTitle)
+            Text(String(number))
+                .frame(maxWidth: .infinity)
+                .modifier(Shake(amount: 25, shakesPerUnit: 3, animatableData: CGFloat(self.wrongAttempts)))
+                .font(.system(size: 72, weight: .bold, design: Font.Design.monospaced))
             Spacer()
-            Text("Choose the number")
+            Text("What's the number?")
                 .padding(.bottom)
-                .foregroundColor(Color(UIColor.systemGray))
             VStack(spacing: 12) {
                 ForEach(answers, id: \.self) { ans in
                     Button(action: {
                         if (ans == NumberWords(string: String(number))) {
                             self.answerStatus = .correct
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + self.confirmationDuration) {
                                 self.answerStatus = .unknown
                                 self.numberGenerator.generate()
                             }
                         } else {
                             self.answerStatus = .incorrect
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                            self.wrongAttempts += 1
+                            DispatchQueue.main.asyncAfter(deadline: .now() + self.confirmationDuration) {
                                 self.answerStatus = .unknown
                             }
                         }
@@ -61,7 +63,6 @@ struct ChoicesView: View {
                             .foregroundColor(Color.white)
                             .cornerRadius(12)
                     }
-//                    .modifier(Shake())
                     .accessibility(identifier: ans)
                 }
             }
@@ -69,9 +70,9 @@ struct ChoicesView: View {
             Spacer()
         }
         .padding(.vertical, 50)
-        .background(answerStatus == .correct ? Color.green : answerStatus == .incorrect ? Color.red : Color.white)
-        .edgesIgnoringSafeArea(.all)
+        .background(answerStatus == .correct ? Color(UIColor.systemGreen) : answerStatus == .incorrect ? Color(UIColor.systemRed) : Color(UIColor.systemBackground))
         .animation(.easeInOut)
+        .edgesIgnoringSafeArea(.all)
     }
 }
 
