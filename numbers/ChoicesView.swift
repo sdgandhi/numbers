@@ -17,6 +17,7 @@ enum AnswerStatus {
 struct ChoicesView: View {
     var confirmationDuration = 1.5
     var answerGenerator = AnswerGenerator()
+    var feedbackGenerator = UINotificationFeedbackGenerator()
     @ObservedObject var numberGenerator = NumberGenerator()
     @State var answerStatus: AnswerStatus = .unknown
     @State var wrongAttempts: Int = 0 // used only for animation interpolation
@@ -61,6 +62,7 @@ struct ChoicesView: View {
                         } else {
                             self.answerStatus = .incorrect
                             self.wrongAttempts += 1
+                            self.feedbackGenerator.notificationOccurred(.error)
                             DispatchQueue.main.asyncAfter(deadline: .now() + self.confirmationDuration) {
                                 self.answerStatus = .unknown
                             }
