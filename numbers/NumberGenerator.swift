@@ -21,7 +21,18 @@ final class NumberGenerator: ObservableObject  {
     }
     
     func generate() {
-        let number = Int.random(in: 1000...9999)
+        let magnitude = Int.random(in: 3...5)
+        var number = 0
+        switch magnitude {
+        case 3:
+            number = Int.random(in: 100...999)
+        case 4:
+            number = Int.random(in: 1000...9999)
+        case 5:
+            number = Int.random(in: 10000...99999)
+        default:
+            number = Int.random(in: 100...99999)
+        }
         self.number = GeneratedNumber(number: number, numberWords: NumberWords(string: String(number)))
     }
 }

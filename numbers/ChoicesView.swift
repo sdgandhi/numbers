@@ -35,7 +35,7 @@ struct ChoicesView: View {
                 .lineLimit(1)
                 .padding(.bottom, 64.0)
             HStack(spacing: 0) {
-                ForEach(0..<numberString.count) { index in
+                ForEach(0..<numberString.count, id: \.self) { index in
                     Text(String(numberString[numberString.index(numberString.startIndex, offsetBy: index)]))
                     .frame(maxWidth: .infinity)
                         .modifier(BubbleAnimation(amount: 0.2, animatableData: CGFloat(self.rightAttempts)))
