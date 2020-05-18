@@ -59,7 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		DC931339246A7F8900E1E827 /* Numbers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Numbers.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC931339246A7F8900E1E827 /* Numbers Practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Numbers Practice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC93133C246A7F8900E1E827 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC93133E246A7F8900E1E827 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DC931340246A7F8900E1E827 /* SpeechRecognitionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognitionView.swift; sourceTree = "<group>"; };
@@ -132,7 +132,7 @@
 		DC93133A246A7F8900E1E827 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DC931339246A7F8900E1E827 /* Numbers.app */,
+				DC931339246A7F8900E1E827 /* Numbers Practice.app */,
 				DC93134F246A7F9000E1E827 /* numbersTests.xctest */,
 				DC93135A246A7F9000E1E827 /* numbersUITests.xctest */,
 			);
@@ -217,7 +217,7 @@
 			);
 			name = numbers;
 			productName = numbers;
-			productReference = DC931339246A7F8900E1E827 /* Numbers.app */;
+			productReference = DC931339246A7F8900E1E827 /* Numbers Practice.app */;
 			productType = "com.apple.product-type.application";
 		};
 		DC93134E246A7F9000E1E827 /* numbersTests */ = {
@@ -437,7 +437,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -498,7 +498,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -537,7 +537,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.newnoetic.numbers;
-				PRODUCT_NAME = Numbers;
+				PRODUCT_NAME = "Numbers Practice";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -561,7 +561,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.newnoetic.numbers;
-				PRODUCT_NAME = Numbers;
+				PRODUCT_NAME = "Numbers Practice";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
