@@ -85,6 +85,10 @@
 		DCE0A2F2246E762B005BCAA6 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		DCE0A2F5246E8360005BCAA6 /* ShakeAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeAnimation.swift; sourceTree = "<group>"; };
 		DCE0A2F8246F4A31005BCAA6 /* BubbleAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleAnimation.swift; sourceTree = "<group>"; };
+		DCE0A2FF2470A7F2005BCAA6 /* Appfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Appfile; sourceTree = "<group>"; };
+		DCE0A3002470A7F2005BCAA6 /* Fastfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Fastfile; sourceTree = "<group>"; };
+		DCE0A3012470A7F2005BCAA6 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		DCE0A3022470A7F2005BCAA6 /* Snapfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Snapfile; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +124,7 @@
 				DC93133B246A7F8900E1E827 /* numbers */,
 				DC931352246A7F9000E1E827 /* numbersTests */,
 				DC93135D246A7F9000E1E827 /* numbersUITests */,
+				DCE0A2FE2470A7F2005BCAA6 /* fastlane */,
 				DC93133A246A7F8900E1E827 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -182,6 +187,17 @@
 				DC931360246A7F9000E1E827 /* Info.plist */,
 			);
 			path = numbersUITests;
+			sourceTree = "<group>";
+		};
+		DCE0A2FE2470A7F2005BCAA6 /* fastlane */ = {
+			isa = PBXGroup;
+			children = (
+				DCE0A2FF2470A7F2005BCAA6 /* Appfile */,
+				DCE0A3002470A7F2005BCAA6 /* Fastfile */,
+				DCE0A3012470A7F2005BCAA6 /* README.md */,
+				DCE0A3022470A7F2005BCAA6 /* Snapfile */,
+			);
+			path = fastlane;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -421,6 +437,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -481,6 +498,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -506,6 +524,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CFBundleShortVersionString = 1.0;
+				CFBundleVersion = 1.0;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"numbers/Preview Content\"";
 				DEVELOPMENT_TEAM = CUCB33MFQZ;
@@ -520,6 +540,7 @@
 				PRODUCT_NAME = Numbers;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -527,6 +548,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CFBundleShortVersionString = 1.0;
+				CFBundleVersion = 1.0;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"numbers/Preview Content\"";
 				DEVELOPMENT_TEAM = CUCB33MFQZ;
@@ -541,6 +564,7 @@
 				PRODUCT_NAME = Numbers;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
