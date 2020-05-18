@@ -39,7 +39,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DC931338246A7F8900E1E827"
-            BuildableName = "Numbers.app"
+            BuildableName = "Numbers Practice.app"
             BlueprintName = "numbers"
             ReferencedContainer = "container:numbers.xcodeproj">
          </BuildableReference>
@@ -55,7 +55,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DC931338246A7F8900E1E827"
-            BuildableName = "Numbers.app"
+            BuildableName = "Numbers Practice.app"
             BlueprintName = "numbers"
             ReferencedContainer = "container:numbers.xcodeproj">
          </BuildableReference>
