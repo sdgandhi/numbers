@@ -50,7 +50,7 @@ platform :ios do
     push_to_git_remote
   
     build_app(
-        scheme: "catchup",
+        scheme: "numbers",
         output_directory: "./build"
     )
     upload_to_testflight(
