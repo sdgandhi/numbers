@@ -54,7 +54,7 @@ platform :ios do
         output_directory: "./build"
     )
     upload_to_testflight(
-        ipa: "./build/Numbers.ipa"
+        ipa: "./build/Numbers Practice.ipa"
     )
   end
   
@@ -101,7 +101,7 @@ platform :ios do
       
       upload_to_app_store(
           force: true, # skips HTML report generation
-          ipa: "./build/Numbers.ipa",
+          ipa: "./build/Numbers Practice.ipa",
           #screenshots_path: "./build/screenshots",
           #overwrite_screenshots: true
       )
