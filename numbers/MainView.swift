@@ -16,14 +16,15 @@ struct MainView: View {
                     Image(systemName: "list.dash")
                     Text("Choices")
             }
+            .edgesIgnoringSafeArea(.top)
             SpeechRecognitionView()
                 .tabItem {
                     Image(systemName: "mic")
                     Text("Speech")
             }
+            .edgesIgnoringSafeArea(.top)
         }
-        .edgesIgnoringSafeArea(.top)
-        .accentColor(Color(red: 1, green: 143/255, blue: 39/255))
+        .accentColor(Color.blue)
     }
 }
 

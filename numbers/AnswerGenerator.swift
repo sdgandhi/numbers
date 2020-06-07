@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import GameplayKit.GKRandomSource
 
 typealias GeneratedAnswer = String
 
@@ -15,6 +16,7 @@ struct AnswerGenerator {
         let itself = NumberWords(string: String(number))
         let timesTen = NumberWords(string: String(number * 10))
         let dividedTen = NumberWords(string: String(number / 10))
-        return [itself, timesTen, dividedTen].shuffled()
+        let generator = GKMersenneTwisterRandomSource(seed: UInt64(number))
+        return generator.arrayByShufflingObjects(in: [itself, timesTen, dividedTen]) as! [GeneratedAnswer]
     }
 }
