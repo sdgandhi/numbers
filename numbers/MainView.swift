@@ -17,6 +17,12 @@ struct MainView: View {
                     Text("Choices")
             }
             .edgesIgnoringSafeArea(.top)
+            TypeInView()
+                .tabItem {
+                    Image(systemName: "pencil.and.ellipsis.rectangle")
+                    Text("Type In")
+            }
+            .edgesIgnoringSafeArea(.top)
             SpeechRecognitionView()
                 .tabItem {
                     Image(systemName: "mic")

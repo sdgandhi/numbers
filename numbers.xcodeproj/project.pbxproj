@@ -20,6 +20,17 @@
 		DC931372246A93B300E1E827 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC931371246A93B300E1E827 /* SpeechRecognizer.swift */; };
 		DC931373246A93B300E1E827 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC931371246A93B300E1E827 /* SpeechRecognizer.swift */; };
 		DC931374246A93B300E1E827 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC931371246A93B300E1E827 /* SpeechRecognizer.swift */; };
+		DC993296248DA0EE00DB8330 /* TypeInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC993295248DA0EE00DB8330 /* TypeInView.swift */; };
+		DC993297248DA0EE00DB8330 /* TypeInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC993295248DA0EE00DB8330 /* TypeInView.swift */; };
+		DC993299248DA12F00DB8330 /* AnswerStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC993298248DA12F00DB8330 /* AnswerStatus.swift */; };
+		DC99329A248DA12F00DB8330 /* AnswerStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC993298248DA12F00DB8330 /* AnswerStatus.swift */; };
+		DC99329B248DA12F00DB8330 /* AnswerStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC993298248DA12F00DB8330 /* AnswerStatus.swift */; };
+		DC99329D248DAC7E00DB8330 /* ResponderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC99329C248DAC7E00DB8330 /* ResponderView.swift */; };
+		DC99329E248DAC7E00DB8330 /* ResponderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC99329C248DAC7E00DB8330 /* ResponderView.swift */; };
+		DC99329F248DAC7E00DB8330 /* ResponderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC99329C248DAC7E00DB8330 /* ResponderView.swift */; };
+		DC9932A1248DACBB00DB8330 /* ResponderTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9932A0248DACBB00DB8330 /* ResponderTextField.swift */; };
+		DC9932A2248DACBB00DB8330 /* ResponderTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9932A0248DACBB00DB8330 /* ResponderTextField.swift */; };
+		DC9932A3248DACBB00DB8330 /* ResponderTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9932A0248DACBB00DB8330 /* ResponderTextField.swift */; };
 		DCC7F0F9246AA827002C8A98 /* NumberWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7F0F8246AA827002C8A98 /* NumberWords.swift */; };
 		DCC7F0FA246AA827002C8A98 /* NumberWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7F0F8246AA827002C8A98 /* NumberWords.swift */; };
 		DCC7F0FB246AA827002C8A98 /* NumberWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7F0F8246AA827002C8A98 /* NumberWords.swift */; };
@@ -75,6 +86,10 @@
 		DC93136C246A81C900E1E827 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DC93136D246A8BB800E1E827 /* SpeechManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechManager.swift; sourceTree = "<group>"; };
 		DC931371246A93B300E1E827 /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
+		DC993295248DA0EE00DB8330 /* TypeInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeInView.swift; sourceTree = "<group>"; };
+		DC993298248DA12F00DB8330 /* AnswerStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerStatus.swift; sourceTree = "<group>"; };
+		DC99329C248DAC7E00DB8330 /* ResponderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponderView.swift; sourceTree = "<group>"; };
+		DC9932A0248DACBB00DB8330 /* ResponderTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponderTextField.swift; sourceTree = "<group>"; };
 		DCC7F0F8246AA827002C8A98 /* NumberWords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberWords.swift; sourceTree = "<group>"; };
 		DCC7F0FC246AA942002C8A98 /* spellOutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = spellOutTests.swift; sourceTree = "<group>"; };
 		DCDA81CE246AAD030092A726 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -147,6 +162,7 @@
 				DCE0A2F2246E762B005BCAA6 /* MainView.swift */,
 				DC931340246A7F8900E1E827 /* SpeechRecognitionView.swift */,
 				DCE0A2EF246E75FF005BCAA6 /* ChoicesView.swift */,
+				DC993295248DA0EE00DB8330 /* TypeInView.swift */,
 				DC93136D246A8BB800E1E827 /* SpeechManager.swift */,
 				DC931371246A93B300E1E827 /* SpeechRecognizer.swift */,
 				DCC7F0F8246AA827002C8A98 /* NumberWords.swift */,
@@ -154,10 +170,13 @@
 				DCE0A2E8246E697C005BCAA6 /* AnswerGenerator.swift */,
 				DCE0A2F5246E8360005BCAA6 /* ShakeAnimation.swift */,
 				DCE0A2F8246F4A31005BCAA6 /* BubbleAnimation.swift */,
+				DC99329C248DAC7E00DB8330 /* ResponderView.swift */,
+				DC993298248DA12F00DB8330 /* AnswerStatus.swift */,
 				DC931342246A7F9000E1E827 /* Assets.xcassets */,
 				DC931347246A7F9000E1E827 /* LaunchScreen.storyboard */,
 				DC93134A246A7F9000E1E827 /* Info.plist */,
 				DC931344246A7F9000E1E827 /* Preview Content */,
+				DC9932A0248DACBB00DB8330 /* ResponderTextField.swift */,
 			);
 			path = numbers;
 			sourceTree = "<group>";
@@ -332,16 +351,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCE0A2F6246E8360005BCAA6 /* ShakeAnimation.swift in Sources */,
+				DC99329D248DAC7E00DB8330 /* ResponderView.swift in Sources */,
+				DC993299248DA12F00DB8330 /* AnswerStatus.swift in Sources */,
 				DC93133D246A7F8900E1E827 /* AppDelegate.swift in Sources */,
 				DCE0A2F0246E75FF005BCAA6 /* ChoicesView.swift in Sources */,
 				DC93136E246A8BB800E1E827 /* SpeechManager.swift in Sources */,
 				DCE0A2F9246F4A31005BCAA6 /* BubbleAnimation.swift in Sources */,
 				DCE0A2F3246E762B005BCAA6 /* MainView.swift in Sources */,
+				DC993296248DA0EE00DB8330 /* TypeInView.swift in Sources */,
 				DC931372246A93B300E1E827 /* SpeechRecognizer.swift in Sources */,
 				DC93133F246A7F8900E1E827 /* SceneDelegate.swift in Sources */,
 				DC931341246A7F8900E1E827 /* SpeechRecognitionView.swift in Sources */,
 				DCDA81D0246AAF570092A726 /* NumberGenerator.swift in Sources */,
 				DCC7F0F9246AA827002C8A98 /* NumberWords.swift in Sources */,
+				DC9932A1248DACBB00DB8330 /* ResponderTextField.swift in Sources */,
 				DCE0A2E9246E697C005BCAA6 /* AnswerGenerator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -351,6 +374,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCC7F0FD246AA942002C8A98 /* spellOutTests.swift in Sources */,
+				DC99329E248DAC7E00DB8330 /* ResponderView.swift in Sources */,
+				DC9932A2248DACBB00DB8330 /* ResponderTextField.swift in Sources */,
+				DC99329A248DA12F00DB8330 /* AnswerStatus.swift in Sources */,
 				DCC7F0FA246AA827002C8A98 /* NumberWords.swift in Sources */,
 				DCDA81D1246AAF570092A726 /* NumberGenerator.swift in Sources */,
 				DC93136F246A8BB800E1E827 /* SpeechManager.swift in Sources */,
@@ -364,7 +390,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC99329F248DAC7E00DB8330 /* ResponderView.swift in Sources */,
 				DC93135F246A7F9000E1E827 /* numbersUITests.swift in Sources */,
+				DC993297248DA0EE00DB8330 /* TypeInView.swift in Sources */,
 				DCE0A2F4246E762B005BCAA6 /* MainView.swift in Sources */,
 				DCC7F0FB246AA827002C8A98 /* NumberWords.swift in Sources */,
 				DCDA81D2246AAF570092A726 /* NumberGenerator.swift in Sources */,
@@ -372,7 +400,9 @@
 				DCE0A2F7246E8360005BCAA6 /* ShakeAnimation.swift in Sources */,
 				DCE0A2FA246F4A31005BCAA6 /* BubbleAnimation.swift in Sources */,
 				DC931374246A93B300E1E827 /* SpeechRecognizer.swift in Sources */,
+				DC99329B248DA12F00DB8330 /* AnswerStatus.swift in Sources */,
 				DCE0A2EB246E697C005BCAA6 /* AnswerGenerator.swift in Sources */,
+				DC9932A3248DACBB00DB8330 /* ResponderTextField.swift in Sources */,
 				DCE0A2F1246E75FF005BCAA6 /* ChoicesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

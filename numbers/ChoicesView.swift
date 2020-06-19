@@ -8,19 +8,15 @@
 
 import SwiftUI
 
-enum AnswerStatus {
-    case correct
-    case incorrect
-    case unknown
-}
-
-var timer: Timer?
 
 struct ChoicesView: View {
+    
     var confirmationDuration = 1.5
     var answerGenerator = AnswerGenerator()
     var feedbackGenerator = UINotificationFeedbackGenerator()
     var timeLimit: Double = 4
+    static var timer: Timer? // don't re-render when we set this, so static
+    
     @ObservedObject var numberGenerator = NumberGenerator()
     @State var answerStatus: AnswerStatus = .unknown
     @State var wrongAttempts: Int = 0 // used only for animation interpolation
@@ -69,7 +65,7 @@ struct ChoicesView: View {
                                 self.answerStatus = .correct
                                 self.rightAttempts += 1
                                 self.combo += 1
-                                timer?.invalidate()
+                                ChoicesView.timer?.invalidate()
                                 DispatchQueue.main.asyncAfter(deadline: .now() + self.confirmationDuration) {
                                     self.answerStatus = .unknown
                                     self.numberGenerator.generate()
@@ -77,7 +73,7 @@ struct ChoicesView: View {
                                     withAnimation(.linear(duration: self.timeLimit)) {
                                         self.timerViewScale = 0
                                     }
-                                    timer = Timer.scheduledTimer(withTimeInterval: self.timeLimit, repeats: false) { _ in
+                                    ChoicesView.timer = Timer.scheduledTimer(withTimeInterval: self.timeLimit, repeats: false) { _ in
                                         withAnimation(.none) { self.combo = 0 }
                                     }
                                 }
