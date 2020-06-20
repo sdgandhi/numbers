@@ -130,6 +130,5 @@ struct TypeInView: View {
 struct TypeInView_Previews: PreviewProvider {
     static var previews: some View {
         TypeInView()
-        //            .environment(\.colorScheme, .dark)
     }
 }

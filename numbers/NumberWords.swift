@@ -19,11 +19,8 @@ func NumberWords(string: String) -> String {
 }
 
 func NumberWords(number: Int) -> String {
-    print("number: \(number)")
     numberFormatter.numberStyle = .spellOut
     let spelledOut = numberFormatter.string(for: number)
-    print("spelled out: \(spelledOut ?? "<>")")
     let cleaned = spelledOut?.replacingOccurrences(of: "-", with: " ").filter{ $0.isLetter || $0.isWhitespace }
-    print("cleaned: \(cleaned ?? "<>")")
     return cleaned!.lowercased()
 }
