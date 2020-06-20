@@ -31,6 +31,9 @@
 		DC9932A1248DACBB00DB8330 /* ResponderTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9932A0248DACBB00DB8330 /* ResponderTextField.swift */; };
 		DC9932A2248DACBB00DB8330 /* ResponderTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9932A0248DACBB00DB8330 /* ResponderTextField.swift */; };
 		DC9932A3248DACBB00DB8330 /* ResponderTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9932A0248DACBB00DB8330 /* ResponderTextField.swift */; };
+		DCAF20EB249DD7BB00B63297 /* KeyboardHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAF20EA249DD7BB00B63297 /* KeyboardHeight.swift */; };
+		DCAF20EC249DD7BB00B63297 /* KeyboardHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAF20EA249DD7BB00B63297 /* KeyboardHeight.swift */; };
+		DCAF20ED249DD7BB00B63297 /* KeyboardHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAF20EA249DD7BB00B63297 /* KeyboardHeight.swift */; };
 		DCC7F0F9246AA827002C8A98 /* NumberWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7F0F8246AA827002C8A98 /* NumberWords.swift */; };
 		DCC7F0FA246AA827002C8A98 /* NumberWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7F0F8246AA827002C8A98 /* NumberWords.swift */; };
 		DCC7F0FB246AA827002C8A98 /* NumberWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7F0F8246AA827002C8A98 /* NumberWords.swift */; };
@@ -90,6 +93,7 @@
 		DC993298248DA12F00DB8330 /* AnswerStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerStatus.swift; sourceTree = "<group>"; };
 		DC99329C248DAC7E00DB8330 /* ResponderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponderView.swift; sourceTree = "<group>"; };
 		DC9932A0248DACBB00DB8330 /* ResponderTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponderTextField.swift; sourceTree = "<group>"; };
+		DCAF20EA249DD7BB00B63297 /* KeyboardHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHeight.swift; sourceTree = "<group>"; };
 		DCC7F0F8246AA827002C8A98 /* NumberWords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberWords.swift; sourceTree = "<group>"; };
 		DCC7F0FC246AA942002C8A98 /* spellOutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = spellOutTests.swift; sourceTree = "<group>"; };
 		DCDA81CE246AAD030092A726 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -171,12 +175,13 @@
 				DCE0A2F5246E8360005BCAA6 /* ShakeAnimation.swift */,
 				DCE0A2F8246F4A31005BCAA6 /* BubbleAnimation.swift */,
 				DC99329C248DAC7E00DB8330 /* ResponderView.swift */,
+				DC9932A0248DACBB00DB8330 /* ResponderTextField.swift */,
 				DC993298248DA12F00DB8330 /* AnswerStatus.swift */,
+				DCAF20EA249DD7BB00B63297 /* KeyboardHeight.swift */,
 				DC931342246A7F9000E1E827 /* Assets.xcassets */,
 				DC931347246A7F9000E1E827 /* LaunchScreen.storyboard */,
 				DC93134A246A7F9000E1E827 /* Info.plist */,
 				DC931344246A7F9000E1E827 /* Preview Content */,
-				DC9932A0248DACBB00DB8330 /* ResponderTextField.swift */,
 			);
 			path = numbers;
 			sourceTree = "<group>";
@@ -352,6 +357,7 @@
 			files = (
 				DCE0A2F6246E8360005BCAA6 /* ShakeAnimation.swift in Sources */,
 				DC99329D248DAC7E00DB8330 /* ResponderView.swift in Sources */,
+				DCAF20EB249DD7BB00B63297 /* KeyboardHeight.swift in Sources */,
 				DC993299248DA12F00DB8330 /* AnswerStatus.swift in Sources */,
 				DC93133D246A7F8900E1E827 /* AppDelegate.swift in Sources */,
 				DCE0A2F0246E75FF005BCAA6 /* ChoicesView.swift in Sources */,
@@ -373,6 +379,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCAF20EC249DD7BB00B63297 /* KeyboardHeight.swift in Sources */,
 				DCC7F0FD246AA942002C8A98 /* spellOutTests.swift in Sources */,
 				DC99329E248DAC7E00DB8330 /* ResponderView.swift in Sources */,
 				DC9932A2248DACBB00DB8330 /* ResponderTextField.swift in Sources */,
@@ -396,6 +403,7 @@
 				DCE0A2F4246E762B005BCAA6 /* MainView.swift in Sources */,
 				DCC7F0FB246AA827002C8A98 /* NumberWords.swift in Sources */,
 				DCDA81D2246AAF570092A726 /* NumberGenerator.swift in Sources */,
+				DCAF20ED249DD7BB00B63297 /* KeyboardHeight.swift in Sources */,
 				DC931370246A8BB800E1E827 /* SpeechManager.swift in Sources */,
 				DCE0A2F7246E8360005BCAA6 /* ShakeAnimation.swift in Sources */,
 				DCE0A2FA246F4A31005BCAA6 /* BubbleAnimation.swift in Sources */,
