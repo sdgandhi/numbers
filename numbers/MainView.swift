@@ -8,29 +8,54 @@
 
 import SwiftUI
 
+enum GameType {
+    case Choices
+    case TypeIn
+}
+
 struct MainView: View {
+    @State var showGame: Bool = false
+    @State var game: GameType = .Choices
+    
     var body: some View {
-        TabView {
-            ChoicesView()
-                .tabItem {
-                    Image(systemName: "list.dash")
-                    Text("Choices")
+        VStack(alignment: .center, spacing: 12) {
+            Spacer()
+            Button("Choices") {
+                self.game = .Choices
+                self.showGame = true
+            }.buttonStyle(CircleButton(width: 100))
+            Spacer()
+            Button("Type In") {
+                self.game = .TypeIn
+                self.showGame = true
+            }.buttonStyle(CircleButton(width: 100))
+            Spacer()
+        }
+        .sheet(isPresented: $showGame) {
+            if self.game == .Choices {
+                ChoicesView()
+            } else if self.game == .TypeIn {
+                TypeInView()
             }
-            .edgesIgnoringSafeArea(.top)
-            TypeInView()
-                .tabItem {
-                    Image(systemName: "pencil.and.ellipsis.rectangle")
-                    Text("Type In")
-            }
-            .edgesIgnoringSafeArea(.top)
+        }
+//        TabView {
+//            ChoicesView()
+//                .tabItem {
+//                    Image(systemName: "list.dash")
+//                    Text("Choices")
+//            }
+//            TypeInView()
+//                .tabItem {
+//                    Image(systemName: "pencil.and.ellipsis.rectangle")
+//                    Text("Type In")
+//            }
 //            SpeechRecognitionView()
 //                .tabItem {
 //                    Image(systemName: "mic")
 //                    Text("Speech")
 //            }
-//            .edgesIgnoringSafeArea(.top)
-        }
-        .accentColor(Color.blue)
+//        }
+//        .accentColor(Color.blue)
     }
 }
 

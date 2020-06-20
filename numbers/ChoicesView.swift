@@ -16,7 +16,6 @@ struct ChoicesView: View {
     var feedbackGenerator = UINotificationFeedbackGenerator()
     var timeLimit: Double = 4
     static var timer: Timer? // don't re-render when we set this, so static
-    
     @ObservedObject var numberGenerator = NumberGenerator()
     @State var answerStatus: AnswerStatus = .unknown
     @State var wrongAttempts: Int = 0 // used only for animation interpolation
@@ -36,7 +35,7 @@ struct ChoicesView: View {
                 .fill(Color(UIColor.secondarySystemBackground))
                 .scaleEffect(x: 1, y: timerViewScale, anchor: .bottom)
             VStack {
-                Text("Combo \(self.combo)")
+                Text("\(String(repeating: "⭐️", count: self.combo))")
                     .padding(10)
                     .font(.system(.body, design: .monospaced))
                     .background(Color(UIColor.tertiarySystemFill))
@@ -60,7 +59,7 @@ struct ChoicesView: View {
                     .padding(.bottom)
                 VStack(spacing: 12) {
                     ForEach(answers, id: \.self) { ans in
-                        Button(action: {
+                        Button("\(ans)") {
                             if (ans == NumberWords(string: String(number))) {
                                 self.answerStatus = .correct
                                 self.rightAttempts += 1
@@ -86,14 +85,8 @@ struct ChoicesView: View {
                                     self.answerStatus = .unknown
                                 }
                             }
-                        }) {
-                            Text(ans)
-                                .frame(maxWidth: .infinity)
-                                .padding()
-                                .background(Color.accentColor)
-                                .foregroundColor(Color.white)
-                                .cornerRadius(12)
                         }
+                        .buttonStyle(BlockButton())
                         .accessibility(identifier: ans)
                     }
                 }
@@ -112,7 +105,7 @@ struct ChoicesView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             ChoicesView()
-            .environment(\.colorScheme, .dark)
+                .environment(\.colorScheme, .dark)
         }
     }
 }

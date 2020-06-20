@@ -16,7 +16,6 @@ struct TypeInView: View {
     var feedbackGenerator = UINotificationFeedbackGenerator()
     //    var timeLimit: Double = 8
     //    static var timer: Timer? // don't re-render when we set this, so static
-    
     @ObservedObject var numberGenerator = NumberGenerator()
     @State var answerStatus: AnswerStatus = .unknown
     @State var wrongAttempts: Int = 0 // used only for animation interpolation
@@ -30,13 +29,18 @@ struct TypeInView: View {
         let numberWords = numberGenerator.number!.numberWords
         let correctAnswer = numberGenerator.number!.number
         
-        return ZStack {
-            //            Rectangle()
-            //                .fill(Color(UIColor.systemBackground))
+        return ZStack(alignment: .bottom) {
+            //                        Rectangle()
+            //                            .fill(Color(UIColor.systemBackground))
             //            Rectangle()
             //                .fill(Color(UIColor.secondarySystemBackground))
             //                .scaleEffect(x: 1, y: timerViewScale, anchor: .bottom)
-            VStack {
+            Rectangle()
+                .fill(answerStatus == .correct ? Color.green : answerStatus == .incorrect ? Color.red : Color.clear)
+                .animation(.easeInOut)
+                .edgesIgnoringSafeArea(.all)
+            
+            VStack(alignment: .center, spacing: 32) {
                 //                Text("Combo \(self.combo)")
                 //                    .padding(10)
                 //                    .font(.system(.body, design: .monospaced))
@@ -47,38 +51,42 @@ struct TypeInView: View {
                 //                    .modifier(ShakeAnimation(amount: 25, shakesPerUnit: 3, animatableData: CGFloat(self.wrongAttempts)))
                 Spacer()
                 Text("What's the number?")
-                    .padding()
                 Text("\(numberWords)")
                     .font(.system(size: 32, weight: .bold))
                     .multilineTextAlignment(.center)
-                    .padding()
                     .onTapGesture {
                         SpeechSynthesizer.say(self.numberGenerator.number!.numberWords)
                 }
-                HStack(spacing: 0) {
-                    ForEach(0..<self.answer.count, id: \.self) { index in
-                        Text(String(self.answer[self.answer.index(self.answer.startIndex, offsetBy: index)]))
-                            .font(.system(size: 32, design: .monospaced))
-                            .modifier(BubbleAnimation(amount: 0.2, animatableData: CGFloat(self.rightAttempts)))
-                            .animation(Animation.spring().delay(Double(index)/10.0))
-                    }
-                }
-                .frame(maxWidth: .infinity, minHeight: 75)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 12)
-                        .stroke(Color.blue, lineWidth: 4)
+                //                HStack(spacing: 0) {
+                //                    ForEach(0..<self.answer.count, id: \.self) { index in
+                //                        Text(String(self.answer[self.answer.index(self.answer.startIndex, offsetBy: index)]))
+                //                            .font(.system(size: 32, design: .monospaced))
+                //                                            .modifier(BubbleAnimation(amount: 0.2, animatableData: CGFloat(self.rightAttempts)))
+                //                            .animation(Animation.spring().delay(Double(index)/10.0))
+                //                    }
+                //                }
+                //                .frame(maxWidth: .infinity, minHeight: 75)
+                //                                .overlay(
+                //                                    RoundedRectangle(cornerRadius: 12)
+                //                                        .stroke(Color.blue, lineWidth: 4)
+                //                                )
+                //                    .padding()
+                TextField("", text: $answer)
+                    .multilineTextAlignment(.center)
+                    .font(.system(size: 32, design: .monospaced))
+                    .frame(height: 70)
+                    .modifier(BubbleAnimation(amount: 0.1, animatableData: CGFloat(self.rightAttempts)))
+                    .accentColor(.clear)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 12)
+                            .stroke(Color.blue, lineWidth: 4)
                 )
-                    .padding()
-                TextField("Answer", text: $answer)
-                    .frame(height: 0)
-                    .opacity(0)
                     .introspectTextField { textField in
-                        textField.adjustsFontForContentSizeCategory = true
                         textField.enablesReturnKeyAutomatically = true
                         textField.keyboardType = .numberPad
                         textField.becomeFirstResponder()
-                    }
-                Button(action: {
+                }
+                Button("Enter") {
                     if (self.answer == String(correctAnswer)) {
                         self.answerStatus = .correct
                         self.rightAttempts += 1
@@ -106,24 +114,16 @@ struct TypeInView: View {
                             self.answerStatus = .unknown
                         }
                     }
-                }) {
-                    Text("Enter")
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(Color.accentColor)
-                        .foregroundColor(Color.white)
-                        .cornerRadius(12)
                 }
-                .padding()
+                .buttonStyle(BlockButton())
                 Rectangle()
                     .fill(Color.clear)
                     .frame(width: 1, height: self.keyboardHeight, alignment: .bottom)
             }
-            .background(answerStatus == .correct ? Color.green : answerStatus == .incorrect ? Color.red : Color.clear)
-            .animation(.easeInOut)
+            .padding()
         }
         .onReceive(Publishers.keyboardHeight) { self.keyboardHeight = $0 }
-        .edgesIgnoringSafeArea(.all)
+        //        .edgesIgnoringSafeArea(.all)
     }
 }
 
