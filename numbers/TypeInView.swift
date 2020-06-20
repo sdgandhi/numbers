@@ -23,7 +23,8 @@ struct TypeInView: View {
     //    @State var timerViewScale: CGFloat = 1
     //    @State var combo = 0
     @State var answer: String = ""
-    @State private var keyboardHeight: CGFloat = 0
+    @State var speak: Bool = false
+    @State var keyboardHeight: CGFloat = 0
     
     var body: some View {
         let numberWords = numberGenerator.number!.numberWords
@@ -40,7 +41,7 @@ struct TypeInView: View {
                 .animation(.easeInOut)
                 .edgesIgnoringSafeArea(.all)
             
-            VStack(alignment: .center, spacing: 32) {
+            VStack(alignment: .center, spacing: 30) {
                 //                Text("Combo \(self.combo)")
                 //                    .padding(10)
                 //                    .font(.system(.body, design: .monospaced))
@@ -49,9 +50,14 @@ struct TypeInView: View {
                 //                    .cornerRadius(.greatestFiniteMagnitude)
                 //                    .modifier(BubbleAnimation(amount: 0.2, animatableData: CGFloat(self.combo)))
                 //                    .modifier(ShakeAnimation(amount: 25, shakesPerUnit: 3, animatableData: CGFloat(self.wrongAttempts)))
+                Toggle(isOn: $speak) {
+                    Image(systemName: "speaker.2")
+                }
+                .frame(maxWidth: 0)
+                .padding()
                 Spacer()
-                Text("What's the number?")
                 Text("\(numberWords)")
+                    .frame(maxHeight: .infinity)
                     .font(.system(size: 32, weight: .bold))
                     .multilineTextAlignment(.center)
                     .onTapGesture {
@@ -96,6 +102,9 @@ struct TypeInView: View {
                             self.answer = ""
                             self.answerStatus = .unknown
                             self.numberGenerator.generate()
+                            if self.speak {
+                                SpeechSynthesizer.say(self.numberGenerator.number!.numberWords)
+                            }
                             //                            self.timerViewScale = 1
                             //                            withAnimation(.linear(duration: self.timeLimit)) {
                             //                                self.timerViewScale = 0
@@ -118,7 +127,7 @@ struct TypeInView: View {
                 .buttonStyle(BlockButton())
                 Rectangle()
                     .fill(Color.clear)
-                    .frame(width: 1, height: self.keyboardHeight, alignment: .bottom)
+                    .frame(width: 1, height: max(self.keyboardHeight - 50, 0), alignment: .bottom)
             }
             .padding()
         }
