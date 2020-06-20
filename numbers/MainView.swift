@@ -23,12 +23,12 @@ struct MainView: View {
                     Text("Type In")
             }
             .edgesIgnoringSafeArea(.top)
-            SpeechRecognitionView()
-                .tabItem {
-                    Image(systemName: "mic")
-                    Text("Speech")
-            }
-            .edgesIgnoringSafeArea(.top)
+//            SpeechRecognitionView()
+//                .tabItem {
+//                    Image(systemName: "mic")
+//                    Text("Speech")
+//            }
+//            .edgesIgnoringSafeArea(.top)
         }
         .accentColor(Color.blue)
     }

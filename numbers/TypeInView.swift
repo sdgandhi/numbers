@@ -8,6 +8,7 @@
 
 import SwiftUI
 import Combine
+import Introspect
 
 struct TypeInView: View {
     
@@ -51,6 +52,9 @@ struct TypeInView: View {
                     .font(.system(size: 32, weight: .bold))
                     .multilineTextAlignment(.center)
                     .padding()
+                    .onTapGesture {
+                        SpeechSynthesizer.say(self.numberGenerator.number!.numberWords)
+                }
                 HStack(spacing: 0) {
                     ForEach(0..<self.answer.count, id: \.self) { index in
                         Text(String(self.answer[self.answer.index(self.answer.startIndex, offsetBy: index)]))
@@ -65,15 +69,15 @@ struct TypeInView: View {
                         .stroke(Color.blue, lineWidth: 4)
                 )
                     .padding()
-                
-                
-                ResponderTextField("", text: $answer, isFirstResponder: .constant(true)) { textField in
-                    textField.adjustsFontForContentSizeCategory = true
-                    textField.enablesReturnKeyAutomatically = true
-                    textField.keyboardType = .numberPad
-                }
-                .frame(height: 0)
-                .opacity(0)
+                TextField("Answer", text: $answer)
+                    .frame(height: 0)
+                    .opacity(0)
+                    .introspectTextField { textField in
+                        textField.adjustsFontForContentSizeCategory = true
+                        textField.enablesReturnKeyAutomatically = true
+                        textField.keyboardType = .numberPad
+                        textField.becomeFirstResponder()
+                    }
                 Button(action: {
                     if (self.answer == String(correctAnswer)) {
                         self.answerStatus = .correct
@@ -112,6 +116,7 @@ struct TypeInView: View {
                 }
                 .padding()
                 Rectangle()
+                    .fill(Color.clear)
                     .frame(width: 1, height: self.keyboardHeight, alignment: .bottom)
             }
             .background(answerStatus == .correct ? Color.green : answerStatus == .incorrect ? Color.red : Color.clear)
