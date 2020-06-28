@@ -10,6 +10,7 @@ import Foundation
 import SwiftUI
 
 final class TimedAnswers: ObservableObject {
+    @ObservedObject var settings = Settings()
     @Published var answerStatus: AnswerStatus = .unknown
     @Published var wrongAttempts: Int = 0 // used only for animation interpolation
     @Published var rightAttempts: Int = 0 // used only for animation interpolation
@@ -18,12 +19,10 @@ final class TimedAnswers: ObservableObject {
     
     private var timer: Timer?
     
-    var enabled: Bool
     var confirmationDuration: TimeInterval
     var timeLimit: TimeInterval
     
-    init(enabled: Bool = true, confirmationDuration: TimeInterval = 1.5, timeLimit: TimeInterval = 4.0) {
-        self.enabled = enabled
+    init(confirmationDuration: TimeInterval = 1.5, timeLimit: TimeInterval = 4.0) {
         self.confirmationDuration = confirmationDuration
         self.timeLimit = timeLimit
     }
@@ -32,7 +31,7 @@ final class TimedAnswers: ObservableObject {
         answerStatus = .correct
         rightAttempts += 1
         combo += 1
-        guard enabled == true else { return }
+        guard settings.enableTimer == true else { return }
         timer?.invalidate()
     }
     
@@ -40,7 +39,6 @@ final class TimedAnswers: ObservableObject {
         answerStatus = .incorrect
         wrongAttempts += 1
         combo = 0
-        guard enabled == true else { return }
         DispatchQueue.main.asyncAfter(deadline: .now() + confirmationDuration) {
             self.answerStatus = .unknown
         }
@@ -48,7 +46,7 @@ final class TimedAnswers: ObservableObject {
     
     func reset() {
         answerStatus = .unknown
-        guard enabled == true else { return }
+        guard settings.enableTimer == true else { return }
         withAnimation(.none) {
             countdown = 1
         }

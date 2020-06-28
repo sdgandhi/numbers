@@ -8,54 +8,54 @@
 
 import SwiftUI
 
-enum GameType {
+enum SheetType {
+    case None
     case Choices
     case TypeIn
+    case Settings
 }
 
 struct MainView: View {
-    @State var showGame: Bool = false
-    @State var game: GameType = .Choices
+    @State var showSheet: Bool = false
+    @State var sheet: SheetType = .None
     
     var body: some View {
         VStack(alignment: .center, spacing: 12) {
+            HStack {
+                Spacer()
+                Button(action: {
+                    self.sheet = .Settings
+                    self.showSheet.toggle()
+                }) {
+                    Image(systemName: "gear").imageScale(.large)
+                }
+                .accentColor(.gray)
+                .buttonStyle(CircleButton(width: 25))
+            }
             Spacer()
             Button("Choices") {
-                self.game = .Choices
-                self.showGame = true
-            }.buttonStyle(CircleButton(width: 100))
+                self.sheet = .Choices
+                self.showSheet.toggle()
+            }
+            .buttonStyle(CircleButton(width: 100))
             Spacer()
             Button("Type In") {
-                self.game = .TypeIn
-                self.showGame = true
-            }.buttonStyle(CircleButton(width: 100))
+                self.sheet = .TypeIn
+                self.showSheet.toggle()
+            }
+            .buttonStyle(CircleButton(width: 100))
             Spacer()
         }
-        .sheet(isPresented: $showGame) {
-            if self.game == .Choices {
+        .sheet(isPresented: $showSheet) {
+            if self.sheet == .Choices {
                 ChoicesView()
-            } else if self.game == .TypeIn {
+            } else if self.sheet == .TypeIn {
                 TypeInView()
+            } else if self.sheet == .Settings {
+                SettingsView()
             }
         }
-//        TabView {
-//            ChoicesView()
-//                .tabItem {
-//                    Image(systemName: "list.dash")
-//                    Text("Choices")
-//            }
-//            TypeInView()
-//                .tabItem {
-//                    Image(systemName: "pencil.and.ellipsis.rectangle")
-//                    Text("Type In")
-//            }
-//            SpeechRecognitionView()
-//                .tabItem {
-//                    Image(systemName: "mic")
-//                    Text("Speech")
-//            }
-//        }
-//        .accentColor(Color.blue)
+        .padding()
     }
 }
 

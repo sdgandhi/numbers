@@ -13,7 +13,7 @@ import Introspect
 struct TypeInView: View {
     var feedbackGenerator = UINotificationFeedbackGenerator()
     @ObservedObject var numberGenerator = NumberGenerator()
-    @ObservedObject var timedAnswers = TimedAnswers(enabled: false)
+    @ObservedObject var timedAnswers = TimedAnswers()
     
     @State var answer: String = ""
     @State var speak: Bool = false
