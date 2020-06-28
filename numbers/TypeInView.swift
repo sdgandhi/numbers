@@ -11,17 +11,10 @@ import Combine
 import Introspect
 
 struct TypeInView: View {
-    
-    var confirmationDuration = 1.5
     var feedbackGenerator = UINotificationFeedbackGenerator()
-    //    var timeLimit: Double = 8
-    //    static var timer: Timer? // don't re-render when we set this, so static
     @ObservedObject var numberGenerator = NumberGenerator()
-    @State var answerStatus: AnswerStatus = .unknown
-    @State var wrongAttempts: Int = 0 // used only for animation interpolation
-    @State var rightAttempts: CGFloat = 0 // used only for animation interpolation
-    //    @State var timerViewScale: CGFloat = 1
-    //    @State var combo = 0
+    @ObservedObject var timedAnswers = TimedAnswers(enabled: false)
+    
     @State var answer: String = ""
     @State var speak: Bool = false
     @State var keyboardHeight: CGFloat = 0
@@ -31,25 +24,8 @@ struct TypeInView: View {
         let correctAnswer = numberGenerator.number!.number
         
         return ZStack(alignment: .bottom) {
-            //                        Rectangle()
-            //                            .fill(Color(UIColor.systemBackground))
-            //            Rectangle()
-            //                .fill(Color(UIColor.secondarySystemBackground))
-            //                .scaleEffect(x: 1, y: timerViewScale, anchor: .bottom)
-            Rectangle()
-                .fill(answerStatus == .correct ? Color.green : answerStatus == .incorrect ? Color.red : Color.clear)
-                .animation(.easeInOut)
-                .edgesIgnoringSafeArea(.all)
-            
+            TimerView(timedAnswers: timedAnswers)
             VStack(alignment: .center, spacing: 30) {
-                //                Text("Combo \(self.combo)")
-                //                    .padding(10)
-                //                    .font(.system(.body, design: .monospaced))
-                //                    .background(Color(UIColor.tertiarySystemFill))
-                //                    .foregroundColor(Color(UIColor.tertiaryLabel))
-                //                    .cornerRadius(.greatestFiniteMagnitude)
-                //                    .modifier(BubbleAnimation(amount: 0.2, animatableData: CGFloat(self.combo)))
-                //                    .modifier(ShakeAnimation(amount: 25, shakesPerUnit: 3, animatableData: CGFloat(self.wrongAttempts)))
                 Toggle(isOn: $speak) {
                     Image(systemName: "speaker.2")
                 }
@@ -63,25 +39,11 @@ struct TypeInView: View {
                     .onTapGesture {
                         SpeechSynthesizer.say(self.numberGenerator.number!.numberWords)
                 }
-                //                HStack(spacing: 0) {
-                //                    ForEach(0..<self.answer.count, id: \.self) { index in
-                //                        Text(String(self.answer[self.answer.index(self.answer.startIndex, offsetBy: index)]))
-                //                            .font(.system(size: 32, design: .monospaced))
-                //                                            .modifier(BubbleAnimation(amount: 0.2, animatableData: CGFloat(self.rightAttempts)))
-                //                            .animation(Animation.spring().delay(Double(index)/10.0))
-                //                    }
-                //                }
-                //                .frame(maxWidth: .infinity, minHeight: 75)
-                //                                .overlay(
-                //                                    RoundedRectangle(cornerRadius: 12)
-                //                                        .stroke(Color.blue, lineWidth: 4)
-                //                                )
-                //                    .padding()
                 TextField("", text: $answer)
                     .multilineTextAlignment(.center)
                     .font(.system(size: 32, design: .monospaced))
                     .frame(height: 70)
-                    .modifier(BubbleAnimation(amount: 0.1, animatableData: CGFloat(self.rightAttempts)))
+                    .modifier(BubbleAnimation(amount: 0.1, animatableData: CGFloat(self.timedAnswers.rightAttempts)))
                     .accentColor(.clear)
                     .overlay(
                         RoundedRectangle(cornerRadius: 12)
@@ -94,33 +56,20 @@ struct TypeInView: View {
                 }
                 Button("Enter") {
                     if (self.answer == String(correctAnswer)) {
-                        self.answerStatus = .correct
-                        self.rightAttempts += 1
-                        //                        self.combo += 1
-                        //                        ChoicesView.timer?.invalidate()
-                        DispatchQueue.main.asyncAfter(deadline: .now() + self.confirmationDuration) {
+                        self.timedAnswers.correct()
+                        DispatchQueue.main.asyncAfter(deadline: .now() + self.timedAnswers.confirmationDuration) {
                             self.answer = ""
-                            self.answerStatus = .unknown
                             self.numberGenerator.generate()
                             if self.speak {
                                 SpeechSynthesizer.say(self.numberGenerator.number!.numberWords)
                             }
-                            //                            self.timerViewScale = 1
-                            //                            withAnimation(.linear(duration: self.timeLimit)) {
-                            //                                self.timerViewScale = 0
-                            //                            }
-                            //                            ChoicesView.timer = Timer.scheduledTimer(withTimeInterval: self.timeLimit, repeats: false) { _ in
-                            //                                withAnimation(.none) { self.combo = 0 }
-                            //                            }
+                            self.timedAnswers.reset()
                         }
                     } else {
-                        self.answerStatus = .incorrect
-                        self.wrongAttempts += 1
-                        //                        withAnimation(.none) { self.combo = 0 }
+                        self.timedAnswers.incorrect()
                         self.feedbackGenerator.notificationOccurred(.error)
-                        DispatchQueue.main.asyncAfter(deadline: .now() + self.confirmationDuration) {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + self.timedAnswers.confirmationDuration) {
                             self.answer = ""
-                            self.answerStatus = .unknown
                         }
                     }
                 }
@@ -132,7 +81,6 @@ struct TypeInView: View {
             .padding()
         }
         .onReceive(Publishers.keyboardHeight) { self.keyboardHeight = $0 }
-        //        .edgesIgnoringSafeArea(.all)
     }
 }
 

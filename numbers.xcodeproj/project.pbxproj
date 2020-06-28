@@ -10,6 +10,15 @@
 		DC18D748249EB1AE00BAB330 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC18D747249EB1AE00BAB330 /* Buttons.swift */; };
 		DC18D749249EB1AE00BAB330 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC18D747249EB1AE00BAB330 /* Buttons.swift */; };
 		DC18D74A249EB1AE00BAB330 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC18D747249EB1AE00BAB330 /* Buttons.swift */; };
+		DC311AF424A90E94000EC076 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC311AF324A90E94000EC076 /* TimerView.swift */; };
+		DC311AF524A90E94000EC076 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC311AF324A90E94000EC076 /* TimerView.swift */; };
+		DC311AF624A90E94000EC076 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC311AF324A90E94000EC076 /* TimerView.swift */; };
+		DC311AF824A918DE000EC076 /* TimedAnswers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC311AF724A918DE000EC076 /* TimedAnswers.swift */; };
+		DC311AF924A918DE000EC076 /* TimedAnswers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC311AF724A918DE000EC076 /* TimedAnswers.swift */; };
+		DC311AFA24A918DE000EC076 /* TimedAnswers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC311AF724A918DE000EC076 /* TimedAnswers.swift */; };
+		DC311AFC24A91B94000EC076 /* ComboView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC311AFB24A91B94000EC076 /* ComboView.swift */; };
+		DC311AFD24A91B94000EC076 /* ComboView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC311AFB24A91B94000EC076 /* ComboView.swift */; };
+		DC311AFE24A91B94000EC076 /* ComboView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC311AFB24A91B94000EC076 /* ComboView.swift */; };
 		DC93133D246A7F8900E1E827 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC93133C246A7F8900E1E827 /* AppDelegate.swift */; };
 		DC93133F246A7F8900E1E827 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC93133E246A7F8900E1E827 /* SceneDelegate.swift */; };
 		DC931341246A7F8900E1E827 /* SpeechRecognitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC931340246A7F8900E1E827 /* SpeechRecognitionView.swift */; };
@@ -75,6 +84,9 @@
 
 /* Begin PBXFileReference section */
 		DC18D747249EB1AE00BAB330 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
+		DC311AF324A90E94000EC076 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		DC311AF724A918DE000EC076 /* TimedAnswers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimedAnswers.swift; sourceTree = "<group>"; };
+		DC311AFB24A91B94000EC076 /* ComboView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComboView.swift; sourceTree = "<group>"; };
 		DC931339246A7F8900E1E827 /* Numbers Practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Numbers Practice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC93133C246A7F8900E1E827 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC93133E246A7F8900E1E827 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -169,6 +181,8 @@
 				DC931340246A7F8900E1E827 /* SpeechRecognitionView.swift */,
 				DCE0A2EF246E75FF005BCAA6 /* ChoicesView.swift */,
 				DC993295248DA0EE00DB8330 /* TypeInView.swift */,
+				DC311AF324A90E94000EC076 /* TimerView.swift */,
+				DC311AF724A918DE000EC076 /* TimedAnswers.swift */,
 				DCAF20EE249DEDCD00B63297 /* SpeechSynthesizer.swift */,
 				DC93136D246A8BB800E1E827 /* SpeechManager.swift */,
 				DC931371246A93B300E1E827 /* SpeechRecognizer.swift */,
@@ -180,6 +194,7 @@
 				DC993298248DA12F00DB8330 /* AnswerStatus.swift */,
 				DCAF20EA249DD7BB00B63297 /* KeyboardHeight.swift */,
 				DC18D747249EB1AE00BAB330 /* Buttons.swift */,
+				DC311AFB24A91B94000EC076 /* ComboView.swift */,
 				DC931342246A7F9000E1E827 /* Assets.xcassets */,
 				DC931347246A7F9000E1E827 /* LaunchScreen.storyboard */,
 				DC93134A246A7F9000E1E827 /* Info.plist */,
@@ -363,6 +378,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC311AF824A918DE000EC076 /* TimedAnswers.swift in Sources */,
+				DC311AF424A90E94000EC076 /* TimerView.swift in Sources */,
 				DCE0A2F6246E8360005BCAA6 /* ShakeAnimation.swift in Sources */,
 				DCAF20EB249DD7BB00B63297 /* KeyboardHeight.swift in Sources */,
 				DC993299248DA12F00DB8330 /* AnswerStatus.swift in Sources */,
@@ -378,6 +395,7 @@
 				DC931341246A7F8900E1E827 /* SpeechRecognitionView.swift in Sources */,
 				DCDA81D0246AAF570092A726 /* NumberGenerator.swift in Sources */,
 				DC18D748249EB1AE00BAB330 /* Buttons.swift in Sources */,
+				DC311AFC24A91B94000EC076 /* ComboView.swift in Sources */,
 				DCC7F0F9246AA827002C8A98 /* NumberWords.swift in Sources */,
 				DCE0A2E9246E697C005BCAA6 /* AnswerGenerator.swift in Sources */,
 			);
@@ -390,10 +408,13 @@
 				DCAF20EC249DD7BB00B63297 /* KeyboardHeight.swift in Sources */,
 				DCC7F0FD246AA942002C8A98 /* spellOutTests.swift in Sources */,
 				DC18D749249EB1AE00BAB330 /* Buttons.swift in Sources */,
+				DC311AFD24A91B94000EC076 /* ComboView.swift in Sources */,
 				DCAF20F0249DEDCD00B63297 /* SpeechSynthesizer.swift in Sources */,
 				DC99329A248DA12F00DB8330 /* AnswerStatus.swift in Sources */,
 				DCC7F0FA246AA827002C8A98 /* NumberWords.swift in Sources */,
+				DC311AF524A90E94000EC076 /* TimerView.swift in Sources */,
 				DCDA81D1246AAF570092A726 /* NumberGenerator.swift in Sources */,
+				DC311AF924A918DE000EC076 /* TimedAnswers.swift in Sources */,
 				DC93136F246A8BB800E1E827 /* SpeechManager.swift in Sources */,
 				DC931373246A93B300E1E827 /* SpeechRecognizer.swift in Sources */,
 				DCE0A2EA246E697C005BCAA6 /* AnswerGenerator.swift in Sources */,
@@ -411,6 +432,8 @@
 				DCE0A2F4246E762B005BCAA6 /* MainView.swift in Sources */,
 				DCC7F0FB246AA827002C8A98 /* NumberWords.swift in Sources */,
 				DCDA81D2246AAF570092A726 /* NumberGenerator.swift in Sources */,
+				DC311AF624A90E94000EC076 /* TimerView.swift in Sources */,
+				DC311AFA24A918DE000EC076 /* TimedAnswers.swift in Sources */,
 				DCAF20ED249DD7BB00B63297 /* KeyboardHeight.swift in Sources */,
 				DC931370246A8BB800E1E827 /* SpeechManager.swift in Sources */,
 				DCE0A2F7246E8360005BCAA6 /* ShakeAnimation.swift in Sources */,
@@ -420,6 +443,7 @@
 				DC99329B248DA12F00DB8330 /* AnswerStatus.swift in Sources */,
 				DCE0A2EB246E697C005BCAA6 /* AnswerGenerator.swift in Sources */,
 				DCE0A2F1246E75FF005BCAA6 /* ChoicesView.swift in Sources */,
+				DC311AFE24A91B94000EC076 /* ComboView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

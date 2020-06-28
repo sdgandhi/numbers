@@ -2,3 +2,4 @@
 build/
 .build/
 fastlane/report.xml
+numbers.xcodeproj/xcuserdata/
