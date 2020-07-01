@@ -21,12 +21,12 @@ platform :ios do
     # Ensure that your git status is not dirty
     ensure_git_status_clean
 
-#    run_tests(
-#        scheme: "numbersTests",
-#        device: "iPhone 11",
-#        derived_data_path: "./build/test_derived_data",
-#        output_directory: "./build/test_output"
-#    )
+    run_tests(
+        scheme: "numbersTests",
+        device: "iPhone 11",
+        derived_data_path: "./build/test_derived_data",
+        output_directory: "./build/test_output"
+    )
 
     get_certificates(
         output_path: "./build"
@@ -91,7 +91,7 @@ platform :ios do
       push_to_git_remote
     
      # See ./Snapfile for config
-     # capture_screenshots
+     capture_screenshots
     
       build_app(
           scheme: "numbers",
@@ -102,8 +102,8 @@ platform :ios do
       upload_to_app_store(
           force: true, # skips HTML report generation
           ipa: "./build/Numbers Practice.ipa",
-          #screenshots_path: "./build/screenshots",
-          #overwrite_screenshots: true
+          screenshots_path: "./build/screenshots",
+          overwrite_screenshots: true
       )
   end
 end

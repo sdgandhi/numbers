@@ -41,7 +41,7 @@ struct TypeInView: View {
                 }
                 TextField("", text: $answer)
                     .multilineTextAlignment(.center)
-                    .font(.system(size: 32, design: .monospaced))
+                    .font(.system(size: 28, design: .monospaced))
                     .frame(height: 70)
                     .modifier(BubbleAnimation(amount: 0.1, animatableData: CGFloat(self.timedAnswers.rightAttempts)))
                     .accentColor(.clear)
