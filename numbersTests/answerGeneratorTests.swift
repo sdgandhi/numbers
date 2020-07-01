@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import Numbers
+@testable import Numbers_Practice
 
 class answerGeneratorTests: XCTestCase {
     var generator: AnswerGenerator!

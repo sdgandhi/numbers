@@ -57,6 +57,7 @@
 		DCDA81D0246AAF570092A726 /* NumberGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDA81CF246AAF570092A726 /* NumberGenerator.swift */; };
 		DCDA81D1246AAF570092A726 /* NumberGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDA81CF246AAF570092A726 /* NumberGenerator.swift */; };
 		DCDA81D2246AAF570092A726 /* NumberGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDA81CF246AAF570092A726 /* NumberGenerator.swift */; };
+		DCDC617324AC5BBD00BD4337 /* BubbleAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE0A2F8246F4A31005BCAA6 /* BubbleAnimation.swift */; };
 		DCE0A2E9246E697C005BCAA6 /* AnswerGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE0A2E8246E697C005BCAA6 /* AnswerGenerator.swift */; };
 		DCE0A2EA246E697C005BCAA6 /* AnswerGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE0A2E8246E697C005BCAA6 /* AnswerGenerator.swift */; };
 		DCE0A2EB246E697C005BCAA6 /* AnswerGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE0A2E8246E697C005BCAA6 /* AnswerGenerator.swift */; };
@@ -429,6 +430,7 @@
 				DCDA81D1246AAF570092A726 /* NumberGenerator.swift in Sources */,
 				DC311B0524A928EF000EC076 /* Settings.swift in Sources */,
 				DC311AF924A918DE000EC076 /* TimedAnswers.swift in Sources */,
+				DCDC617324AC5BBD00BD4337 /* BubbleAnimation.swift in Sources */,
 				DC93136F246A8BB800E1E827 /* SpeechManager.swift in Sources */,
 				DC931373246A93B300E1E827 /* SpeechRecognizer.swift in Sources */,
 				DCE0A2EA246E697C005BCAA6 /* AnswerGenerator.swift in Sources */,
@@ -674,7 +676,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Numbers.app/Numbers";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Numbers Practice.app/Numbers Practice";
 			};
 			name = Debug;
 		};
@@ -696,7 +698,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Numbers.app/Numbers";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Numbers Practice.app/Numbers Practice";
 			};
 			name = Release;
 		};
