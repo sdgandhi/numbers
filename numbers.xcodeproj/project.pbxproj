@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D2A73F3E257D79C700923F48 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D2A73F3D257D79C700923F48 /* GoogleService-Info.plist */; };
+		D2A73F44257D7B0300923F48 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = D2A73F43257D7B0300923F48 /* FirebaseAnalytics */; };
 		DC18D748249EB1AE00BAB330 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC18D747249EB1AE00BAB330 /* Buttons.swift */; };
 		DC18D749249EB1AE00BAB330 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC18D747249EB1AE00BAB330 /* Buttons.swift */; };
 		DC18D74A249EB1AE00BAB330 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC18D747249EB1AE00BAB330 /* Buttons.swift */; };
@@ -90,6 +92,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D2A73F3D257D79C700923F48 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DC18D747249EB1AE00BAB330 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		DC311AF324A90E94000EC076 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		DC311AF724A918DE000EC076 /* TimedAnswers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimedAnswers.swift; sourceTree = "<group>"; };
@@ -137,6 +140,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2A73F44257D7B0300923F48 /* FirebaseAnalytics in Frameworks */,
 				DCAF20F4249E97F200B63297 /* Introspect in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -209,6 +213,7 @@
 				DC931342246A7F9000E1E827 /* Assets.xcassets */,
 				DC931347246A7F9000E1E827 /* LaunchScreen.storyboard */,
 				DC93134A246A7F9000E1E827 /* Info.plist */,
+				D2A73F3D257D79C700923F48 /* GoogleService-Info.plist */,
 				DC931344246A7F9000E1E827 /* Preview Content */,
 			);
 			path = numbers;
@@ -270,6 +275,7 @@
 			name = numbers;
 			packageProductDependencies = (
 				DCAF20F3249E97F200B63297 /* Introspect */,
+				D2A73F43257D7B0300923F48 /* FirebaseAnalytics */,
 			);
 			productName = numbers;
 			productReference = DC931339246A7F8900E1E827 /* Numbers Practice.app */;
@@ -345,6 +351,7 @@
 			mainGroup = DC931330246A7F8900E1E827;
 			packageReferences = (
 				DCAF20F2249E97F100B63297 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
+				D2A73F42257D7B0300923F48 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = DC93133A246A7F8900E1E827 /* Products */;
 			projectDirPath = "";
@@ -363,6 +370,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC931349246A7F9000E1E827 /* LaunchScreen.storyboard in Resources */,
+				D2A73F3E257D79C700923F48 /* GoogleService-Info.plist in Resources */,
 				DC931346246A7F9000E1E827 /* Preview Assets.xcassets in Resources */,
 				DC931343246A7F9000E1E827 /* Assets.xcassets in Resources */,
 			);
@@ -615,6 +623,7 @@
 				CFBundleShortVersionString = 1.0;
 				CFBundleVersion = 1.0;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_ASSET_PATHS = "\"numbers/Preview Content\"";
 				DEVELOPMENT_TEAM = CUCB33MFQZ;
 				ENABLE_PREVIEWS = YES;
@@ -640,6 +649,7 @@
 				CFBundleShortVersionString = 1.0;
 				CFBundleVersion = 1.0;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_ASSET_PATHS = "\"numbers/Preview Content\"";
 				DEVELOPMENT_TEAM = CUCB33MFQZ;
 				ENABLE_PREVIEWS = YES;
@@ -784,6 +794,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		D2A73F42257D7B0300923F48 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.2.0;
+			};
+		};
 		DCAF20F2249E97F100B63297 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/sdgandhi/SwiftUI-Introspect.git";
@@ -795,6 +813,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		D2A73F43257D7B0300923F48 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D2A73F42257D7B0300923F48 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
 		DCAF20F3249E97F200B63297 /* Introspect */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DCAF20F2249E97F100B63297 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
