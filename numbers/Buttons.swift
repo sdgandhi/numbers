@@ -43,7 +43,7 @@ struct CircleButton: ButtonStyle {
             .padding()
             .background(Color.accentColor)
             .foregroundColor(Color.white)
-            .cornerRadius(.infinity)
+            .cornerRadius(width)
             .scaleEffect(configuration.isPressed ? 0.95: 1)
             .animation(.spring())
     }
