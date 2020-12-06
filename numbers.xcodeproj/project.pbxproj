@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D2A73F3E257D79C700923F48 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D2A73F3D257D79C700923F48 /* GoogleService-Info.plist */; };
 		D2A73F44257D7B0300923F48 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = D2A73F43257D7B0300923F48 /* FirebaseAnalytics */; };
+		D2A73F49257D7E0800923F48 /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A73F48257D7E0800923F48 /* Analytics.swift */; };
 		DC18D748249EB1AE00BAB330 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC18D747249EB1AE00BAB330 /* Buttons.swift */; };
 		DC18D749249EB1AE00BAB330 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC18D747249EB1AE00BAB330 /* Buttons.swift */; };
 		DC18D74A249EB1AE00BAB330 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC18D747249EB1AE00BAB330 /* Buttons.swift */; };
@@ -93,6 +94,7 @@
 
 /* Begin PBXFileReference section */
 		D2A73F3D257D79C700923F48 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D2A73F48257D7E0800923F48 /* Analytics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
 		DC18D747249EB1AE00BAB330 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		DC311AF324A90E94000EC076 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		DC311AF724A918DE000EC076 /* TimedAnswers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimedAnswers.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				DC18D747249EB1AE00BAB330 /* Buttons.swift */,
 				DC311AFB24A91B94000EC076 /* ComboView.swift */,
 				DC311B0324A928EF000EC076 /* Settings.swift */,
+				D2A73F48257D7E0800923F48 /* Analytics.swift */,
 				DC931342246A7F9000E1E827 /* Assets.xcassets */,
 				DC931347246A7F9000E1E827 /* LaunchScreen.storyboard */,
 				DC93134A246A7F9000E1E827 /* Info.plist */,
@@ -410,6 +413,7 @@
 				DCAF20EF249DEDCD00B63297 /* SpeechSynthesizer.swift in Sources */,
 				DCE0A2F3246E762B005BCAA6 /* MainView.swift in Sources */,
 				DC993296248DA0EE00DB8330 /* TypeInView.swift in Sources */,
+				D2A73F49257D7E0800923F48 /* Analytics.swift in Sources */,
 				DC931372246A93B300E1E827 /* SpeechRecognizer.swift in Sources */,
 				DC93133F246A7F8900E1E827 /* SceneDelegate.swift in Sources */,
 				DC931341246A7F8900E1E827 /* SpeechRecognitionView.swift in Sources */,
