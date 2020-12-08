@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-import FirebaseAnalytics
 
 struct ChoicesView: View {
     
@@ -44,13 +43,11 @@ struct ChoicesView: View {
                         Button("\(ans)") {
                             if (ans == NumberWords(string: String(number))) {
                                 self.timedAnswers.correct()
-                                Analytics.logEvent(AnalyticsEvent.AnswerCorrect.rawValue, parameters: [AnalyticsParameter.GameType.rawValue: "Choices", AnalyticsParameter.ScoreCombo.rawValue: self.timedAnswers.combo])
                                 DispatchQueue.main.asyncAfter(deadline: .now() + self.timedAnswers.confirmationDuration) {
                                     self.numberGenerator.generate()
                                     self.timedAnswers.reset()
                                 }
                             } else {
-                                Analytics.logEvent(AnalyticsEvent.AnswerIncorrect.rawValue, parameters: [AnalyticsParameter.GameType.rawValue: "Choices", AnalyticsParameter.ScoreCombo.rawValue: self.timedAnswers.combo])
                                 self.timedAnswers.incorrect()
                                 self.feedbackGenerator.notificationOccurred(.error)
                             }

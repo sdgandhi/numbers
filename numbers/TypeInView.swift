@@ -9,7 +9,6 @@
 import SwiftUI
 import Combine
 import Introspect
-import FirebaseAnalytics
 
 struct TypeInView: View {
     var feedbackGenerator = UINotificationFeedbackGenerator()
@@ -59,7 +58,6 @@ struct TypeInView: View {
                 Button("Enter") {
                     if (self.answer == String(correctAnswer)) {
                         self.timedAnswers.correct()
-                        Analytics.logEvent(AnalyticsEvent.AnswerCorrect.rawValue, parameters: [AnalyticsParameter.GameType.rawValue: "TypeIn", AnalyticsParameter.ScoreCombo.rawValue: self.timedAnswers.combo, AnalyticsParameter.TimerEnabled.rawValue: settings.enableTimer ? "true" : "false"])
                         DispatchQueue.main.asyncAfter(deadline: .now() + self.timedAnswers.confirmationDuration) {
                             self.answer = ""
                             self.numberGenerator.generate()
@@ -69,7 +67,6 @@ struct TypeInView: View {
                             self.timedAnswers.reset()
                         }
                     } else {
-                        Analytics.logEvent(AnalyticsEvent.AnswerIncorrect.rawValue, parameters: [AnalyticsParameter.GameType.rawValue: "TypeIn", AnalyticsParameter.ScoreCombo.rawValue: self.timedAnswers.combo, AnalyticsParameter.TimerEnabled.rawValue: settings.enableTimer ? "true" : "false"])
                         self.timedAnswers.incorrect()
                         self.feedbackGenerator.notificationOccurred(.error)
                         DispatchQueue.main.asyncAfter(deadline: .now() + self.timedAnswers.confirmationDuration) {
