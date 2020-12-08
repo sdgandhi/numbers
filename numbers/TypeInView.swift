@@ -69,7 +69,7 @@ struct TypeInView: View {
                             self.timedAnswers.reset()
                         }
                     } else {
-                        Analytics.logEvent(AnalyticsEvent.AnswerIncorrect.rawValue, parameters: [AnalyticsParameter.GameType.rawValue: "Choices", AnalyticsParameter.ScoreCombo.rawValue: self.timedAnswers.combo, AnalyticsParameter.TimerEnabled.rawValue: settings.enableTimer ? "true" : "false"])
+                        Analytics.logEvent(AnalyticsEvent.AnswerIncorrect.rawValue, parameters: [AnalyticsParameter.GameType.rawValue: "TypeIn", AnalyticsParameter.ScoreCombo.rawValue: self.timedAnswers.combo, AnalyticsParameter.TimerEnabled.rawValue: settings.enableTimer ? "true" : "false"])
                         self.timedAnswers.incorrect()
                         self.feedbackGenerator.notificationOccurred(.error)
                         DispatchQueue.main.asyncAfter(deadline: .now() + self.timedAnswers.confirmationDuration) {
