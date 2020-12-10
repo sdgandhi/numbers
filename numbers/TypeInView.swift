@@ -32,11 +32,11 @@ struct TypeInView: View {
                 }
                 .frame(maxWidth: 0)
                 .padding()
-                Spacer()
                 Text("\(numberWords)")
                     .frame(maxHeight: .infinity)
                     .font(.system(size: 32, weight: .bold))
                     .multilineTextAlignment(.center)
+                    .minimumScaleFactor(0.5)
                     .onTapGesture {
                         SpeechSynthesizer.say(self.numberGenerator.number!.numberWords)
                 }
@@ -81,7 +81,11 @@ struct TypeInView: View {
             }
             .padding()
         }
-        .onReceive(Publishers.keyboardHeight) { self.keyboardHeight = $0 }
+        .onReceive(Publishers.keyboardHeight) {
+            if (ProcessInfo().operatingSystemVersion.majorVersion <= 13) {
+                self.keyboardHeight = $0
+            }
+        }
     }
 }
 
