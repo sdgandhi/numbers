@@ -619,7 +619,7 @@
 				CFBundleShortVersionString = 1.0;
 				CFBundleVersion = 1.0;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_ASSET_PATHS = "\"numbers/Preview Content\"";
 				DEVELOPMENT_TEAM = CUCB33MFQZ;
 				ENABLE_PREVIEWS = YES;
@@ -629,7 +629,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1;
+				MARKETING_VERSION = 2.2;
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.newnoetic.numbers;
 				PRODUCT_NAME = "Numbers Practice";
@@ -646,7 +646,7 @@
 				CFBundleShortVersionString = 1.0;
 				CFBundleVersion = 1.0;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_ASSET_PATHS = "\"numbers/Preview Content\"";
 				DEVELOPMENT_TEAM = CUCB33MFQZ;
 				ENABLE_PREVIEWS = YES;
@@ -656,7 +656,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1;
+				MARKETING_VERSION = 2.2;
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.newnoetic.numbers;
 				PRODUCT_NAME = "Numbers Practice";

@@ -12,6 +12,12 @@ For example:
 Numbers uses Siri voice recognition to verify if you have said the number correctly. This may cause your spoken phrase to be sent to Apple's servers to be evaluated. 
 The Numers app does not store this information, and it is deleted from Apple's servers after the phrase has been evaluated.
 
+
+## iOS Testflight beta
+
+1. `sudo bundle update`
+1. `bundle exec fastlane beta`
+
 ## Analytics
 
 We're using Google Analytics, but not tracking any personal information. We only use these analytics to understand basic things like how many times the app is opened, how many games are being played, if any errors are happening.
