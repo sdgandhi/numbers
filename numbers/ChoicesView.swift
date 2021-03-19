@@ -53,7 +53,7 @@ struct ChoicesView: View {
                             }
                         }
                         .buttonStyle(BlockButton())
-                        .accessibility(identifier: ans)
+                        .accessibility(identifier: "answer \(answers.firstIndex(of: ans)!)")
                     }
                 }
                 .padding()

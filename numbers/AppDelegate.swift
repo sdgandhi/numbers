@@ -15,6 +15,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Arguments
+        let arguments = CommandLine.arguments
+        if arguments.contains("--disableAnimation") {
+            UIView.setAnimationsEnabled(false)
+        }
+        if arguments.contains("-testing") {
+            print("detected testing env: disabling analytics collection")
+//            Analytics.setAnalyticsCollectionEnabled(false)
+        }
+        if arguments.contains("--disableIntro") {}
+        if arguments.contains("--showTaps") {
+            ShowTaps.enabled = .debugOnly
+        } else {
+            ShowTaps.enabled = .never
+        }
+        
         return true
     }
 
